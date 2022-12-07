@@ -10,9 +10,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Xonia',
-      home: const LandingPage(),
+      home: LandingPage(),
     );
   }
 }
