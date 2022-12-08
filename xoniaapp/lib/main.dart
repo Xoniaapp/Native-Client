@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './color_scheme.dart' as color_scheme;
 import './pages/home.dart';
+import './pages/sign_in.dart';
 
 bool showLandingPage = true;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences.getInstance().then((instance) {
-    if (instance.containsKey('access-token') &&
-        instance.containsKey('session-token')) {
+    if (instance.containsKey('access-token')) {
       showLandingPage = false;
     }
     runApp(const App());
@@ -40,7 +40,10 @@ class LandingPage extends StatelessWidget {
           children: <Widget>[
             Image.asset('assets/images/logo.png'),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignInPage()),
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: color_scheme.redOne,
               ),
