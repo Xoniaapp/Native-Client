@@ -25,7 +25,29 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: color_scheme.darkOne,
       body: Center(
-        child: Image.asset('assets/images/logo.png'),
+        child: Column(
+          children: <Widget>[
+            Image.asset('assets/images/logo.png'),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: color_scheme.redOne,
+              ),
+              child: const Text('Sign in'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: color_scheme.darkOne,
+                side: const BorderSide(
+                  width: 2,
+                  color: color_scheme.redOne,
+                ),
+              ),
+              child: const Text('Sign up'),
+            ),
+          ],
+        ),
       ),
     );
   }
