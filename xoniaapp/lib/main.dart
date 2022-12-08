@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './color_scheme.dart' as color_scheme;
 import 'package:shared_preferences/shared_preferences.dart';
+import './color_scheme.dart' as color_scheme;
+import './pages/home.dart';
 
 bool showLandingPage = true;
 
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Xonia',
-      home: showLandingPage ? const LandingPage() : const LandingPage(),
+      home: showLandingPage ? const LandingPage() : const HomePage(),
     );
   }
 }
