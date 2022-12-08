@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import './color_scheme.dart' as color_scheme;
+import 'package:shared_preferences/shared_preferences.dart';
+
+bool showLandingPage = true;
 
 void main() {
-  runApp(const App());
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.getInstance().then((instance) {
+    if (instance.containsKey('access-token') &&
+        instance.containsKey('session-token')) {
+      showLandingPage = false;
+    }
+    runApp(const App());
+  });
 }
 
 class App extends StatelessWidget {
@@ -10,9 +20,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Xonia',
-      home: LandingPage(),
+      home: showLandingPage ? const LandingPage() : const LandingPage(),
     );
   }
 }
