@@ -9,7 +9,8 @@ bool showLandingPage = true;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences.getInstance().then((instance) {
-    if (instance.containsKey('access-token')) {
+    if (instance.containsKey('access-token') &&
+        instance.containsKey('session-token')) {
       showLandingPage = false;
     }
     runApp(const App());
