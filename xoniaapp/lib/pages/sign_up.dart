@@ -31,6 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
         headers: {'Content-Type': 'application/json'});
     if (res.statusCode == 201) {
       var decodedResponse = jsonDecode(utf8.decode(res.bodyBytes)) as Map;
+      // TO-DO: Actually process the response instead of just printing it
       print(decodedResponse);
       return;
     }
@@ -48,7 +49,10 @@ class _SignUpPageState extends State<SignUpPage> {
       });
       return;
     }
-    setState(() => _info = '');
+    setState(() {
+      _infoIsError = false;
+      _info = '';
+    });
   }
 
   @override
