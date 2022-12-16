@@ -13,6 +13,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  // TO-DO: Migrate this code from old API logic to new API logic
   bool _infoIsError = false;
   String _info = '';
   final Map _reqBody = {'email': '', 'password': ''};
