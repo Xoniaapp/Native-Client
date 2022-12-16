@@ -18,7 +18,7 @@ class _SignInPageState extends State<SignInPage> {
   String _info = '';
   final Map _reqBody = {'email': '', 'password': ''};
 
-  void _login() async {
+  void _signIn() async {
     setState(() {
       _infoIsError = false;
       _info = 'Signing in...';
@@ -132,7 +132,7 @@ class _SignInPageState extends State<SignInPage> {
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: ElevatedButton(
-                        onPressed: _login,
+                        onPressed: _signIn,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: color_scheme.redOne,
                         ),
