@@ -1,5 +1,5 @@
-# xoniaapp/mobile-client
+# mobile
 Client for Android, and iOS, built with Flutter. (WIP)
 
-# Development docs
-Not done yet
+# License
+[AGPL 3.0](./LICENSE)
