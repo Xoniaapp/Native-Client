@@ -14,12 +14,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   bool _infoIsError = false;
   String _info = '';
-  final Map _reqBody = {
-    'email': '',
-    'password': '',
-    'username': '',
-    'suffix': 6969
-  };
+  final Map _reqBody = {'email': '', 'password': '', 'username': ''};
 
   void _signUp() async {
     setState(() {
@@ -160,7 +155,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 6),
+              padding: const EdgeInsets.only(top: 6, bottom: 20),
               child: SizedBox(
                 width: 300,
                 child: TextField(
@@ -200,53 +195,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Username',
-                    hintStyle: const TextStyle(
-                      color: color_scheme.gray,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 6, bottom: 20),
-              child: SizedBox(
-                width: 300,
-                child: TextField(
-                  onChanged: (input) {
-                    int? suffixAsInt = int.tryParse(input);
-                    if (suffixAsInt == null) {
-                      setState(() {
-                        _infoIsError = true;
-                        _info = 'Tag must be a number';
-                      });
-                    } else if (input.length != 4) {
-                      setState(() {
-                        _infoIsError = true;
-                        _info = 'Tag must be 4 digits';
-                      });
-                    } else {
-                      setState(() {
-                        _infoIsError = false;
-                        _info = '';
-                      });
-                      _reqBody['suffix'] = suffixAsInt;
-                    }
-                  },
-                  cursorColor: color_scheme.white,
-                  style: const TextStyle(color: color_scheme.white),
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: color_scheme.redOne,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(10)),
-                    hintText: 'Tag',
                     hintStyle: const TextStyle(
                       color: color_scheme.gray,
                     ),
