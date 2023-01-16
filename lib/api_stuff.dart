@@ -1,4 +1,4 @@
-const String baseUrl = 'https://cbbe967eae45.in.ngrok.io';
+const String baseUrl = 'http://localhost:8080';
 
 Uri uriForApiRoute(String route) {
   return Uri.parse(baseUrl + route);
