@@ -219,6 +219,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),
                                     side: const BorderSide(
+                                        width: 0,
                                         color: color_scheme.redOne)))),
                         child: const Text('Sign up')),
                   ),

@@ -25,7 +25,8 @@ class LandingPage extends StatelessWidget {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                          side: const BorderSide(color: color_scheme.redOne)))),
+                          side: const BorderSide(
+                              width: 0, color: color_scheme.redOne)))),
               child: const Text('Sign in'),
             ),
             ElevatedButton(
