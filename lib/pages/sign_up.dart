@@ -211,20 +211,29 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.only(right: 20),
                     child: ElevatedButton(
                         onPressed: _signUp,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: color_scheme.redOne,
-                        ),
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                color_scheme.redOne),
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: const BorderSide(
+                                        color: color_scheme.redOne)))),
                         child: const Text('Sign up')),
                   ),
                   ElevatedButton(
                     onPressed: () => Navigator.pop(context),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: color_scheme.darkOne,
-                      side: const BorderSide(
-                        width: 2,
-                        color: color_scheme.redOne,
-                      ),
-                    ),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            color_scheme.darkOne),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: const BorderSide(
+                                        width: 2,
+                                        color: color_scheme.redOne)))),
                     child: const Text('Go back'),
                   ),
                 ],

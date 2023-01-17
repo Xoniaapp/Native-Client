@@ -19,9 +19,13 @@ class LandingPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const SignInPage()),
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: color_scheme.redOne,
-              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(color_scheme.redOne),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: const BorderSide(color: color_scheme.redOne)))),
               child: const Text('Sign in'),
             ),
             ElevatedButton(
@@ -29,13 +33,14 @@ class LandingPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const SignUpPage()),
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: color_scheme.darkOne,
-                side: const BorderSide(
-                  width: 2,
-                  color: color_scheme.redOne,
-                ),
-              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(color_scheme.darkOne),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: const BorderSide(
+                              width: 2, color: color_scheme.redOne)))),
               child: const Text('Sign up'),
             ),
           ],
